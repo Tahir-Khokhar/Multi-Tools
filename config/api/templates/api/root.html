@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}API Docs{% endblock %}
+{% block content %}
+<div id="api-section" class="app-section active">
+    <div class="card" style="background: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);">
+        <h2 style="margin-bottom: 1.5rem; color: #60a5fa;"><i class="fas fa-code"></i> API Documentation</h2>
+        <div style="display: grid; gap: 1rem;">
+            <div style="background: #0f172a; padding: 1rem; border-radius: 0.5rem;">
+                <h3 style="color: #a78bfa;">GET /api/calculator/</h3>
+                <p style="color: #94a3b8;">Calculate expression</p>
+            </div>
+            <div style="background: #0f172a; padding: 1rem; border-radius: 0.5rem;">
+                <h3 style="color: #a78bfa;">GET /api/alarms/</h3>
+                <p style="color: #94a3b8;">List all active alarms</p>
+            </div>
+            <div style="background: #0f172a; padding: 1rem; border-radius: 0.5rem;">
+                <h3 style="color: #a78bfa;">GET /api/alarms/create/</h3>
+                <p style="color: #94a3b8;">Create a new alarm</p>
+            </div>
+            <div style="background: #0f172a; padding: 1rem; border-radius: 0.5rem;">
+                <h3 style="color: #a78bfa;">GET /api/snake-score/</h3>
+                <p style="color: #94a3b8;">Get/Set snake high score</p>
+            </div>
+            <div style="background: #0f172a; padding: 1rem; border-radius: 0.5rem;">
+                <h3 style="color: #a78bfa;">GET /api/dino-score/</h3>
+                <p style="color: #94a3b8;">Get/Set dino high score</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
