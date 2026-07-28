@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Alarm Clock{% endblock %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'alm/alarm.css' %}">
+{% endblock %}
+{% block content %}
+<div id="alarm-section" class="app-section active">
+    <div class="card" style="background: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);">
+        <h2 style="margin-bottom: 1.5rem; color: #60a5fa;"><i class="fas fa-clock"></i> Alarm Clock</h2>
+        <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <input type="time" id="alarm-time" style="flex: 1; min-width: 150px; padding: 0.75rem; border-radius: 0.5rem; border: none; background: #0f172a; color: #fff; font-size: 1rem;">
+            <input type="text" id="alarm-label" placeholder="Label" style="flex: 1; min-width: 150px; padding: 0.75rem; border-radius: 0.5rem; border: none; background: #0f172a; color: #fff; font-size: 1rem;">
+            <button onclick="setAlarm()" style="padding: 0.75rem 1.5rem; background: #60a5fa; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">Set Alarm</button>
+        </div>
+        <div id="alarm-list" style="display: grid; gap: 0.75rem;"></div>
+        <div id="current-time" style="font-size: 3rem; font-weight: 700; text-align: center; margin-top: 2rem; color: #a78bfa;"></div>
+        <div id="alarm-message" style="display: none; text-align: center; margin-top: 1rem; padding: 1rem; background: #ef4444; border-radius: 0.5rem;">
+            <h3 style="color: #fff;">Alarms Ringing!</h3>
+            <button onclick="stopAlarm()" style="margin-top: 0.5rem; padding: 0.5rem 1.5rem; background: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">Stop</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+<script src="{% static 'alm/alarm.js' %}"></script>
+{% endblock %}
