@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Snake Game{% endblock %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'sng/snake.css' %}">
+{% endblock %}
+{% block content %}
+<div id="snake-section" class="app-section active">
+    <div class="card" style="background: transparent; box-shadow: none; padding: 0; text-align: center;">
+        <h2 style="margin-bottom: 1rem; color: #fbbf24;"><i class="fas fa-gamepad"></i> Snake Game</h2>
+        <canvas id="snakeCanvas" width="400" height="400" style="border-radius: 1rem; border: 3px solid #334155; display: block; margin: 0 auto; box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.5);"></canvas>
+        <p style="color: #94a3b8; margin-top: 1rem; margin-bottom: 1rem;">Arrow Keys / WASD to move | SPACE to pause | Eat glowing orbs. Speed increases every 10 points!</p>
+        <div class="snake-stats">
+            <div class="snake-stat">
+                <div class="snake-stat-label">Score</div>
+                <div class="snake-stat-value" id="snake-score" style="color: #fbbf24;">0</div>
+            </div>
+            <div class="snake-stat">
+                <div class="snake-stat-label">High Score</div>
+                <div class="snake-stat-value" id="snake-highscore" style="color: #60a5fa;">0</div>
+            </div>
+            <div class="snake-stat">
+                <div class="snake-stat-label">Speed</div>
+                <div class="snake-stat-value" id="snake-speed" style="color: #a78bfa;">1x</div>
+            </div>
+        </div>
+        <button onclick="resetSnake()" class="snake-btn"><i class="fas fa-redo"></i> Restart</button>
+        <div class="snake-hint">Eat red orbs to grow. Don't hit walls or yourself!</div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+<script src="{% static 'sng/snake.js' %}"></script>
+<script>
+    const speedEl = document.getElementById('snake-speed');
+    setInterval(() => {
+        if (typeof score !== 'undefined') {
+            const level = Math.floor(score / 10) + 1;
+            speedEl.textContent = level + 'x';
+        }
+    }, 500);
+</script>
+{% endblock %}
