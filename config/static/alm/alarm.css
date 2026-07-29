@@ -1,0 +1,7 @@
+.nav-links.active a { color: #fff; }
+#alarm-message { animation: shake 0.5s infinite; }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.alarm-item {
+    background: #0f172a; border-radius: 0.75rem; padding: 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
