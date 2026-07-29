@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0c0f14;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem !important;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(251, 191, 36, 0.08) 0%, transparent 60%),
+        #0c0f14;
+}
+
+.dino-container {
+    max-width: 880px;
+    width: 100%;
+    text-align: center;
+    animation: fadeInUp 0.6s ease;
+}
+
+.dino-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fbbf24;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.dino-title i {
+    margin-right: 0.5rem;
+}
+
+#dinoCanvas {
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 1rem;
+    border: 3px solid #334155;
+    box-shadow:
+        0 0 0 1px rgba(251, 191, 36, 0.1),
+        0 20px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 80px -20px rgba(251, 191, 36, 0.15);
+    background: #fef3c7;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.dino-controls-hint {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.hint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.hint-badge kbd {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    background: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 0.35rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    color: #e2e8f0;
+    box-shadow: 0 2px 0 #334155;
+}
+
+.dino-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.dino-stat {
+    background: linear-gradient(135deg, #1e293b 0%, #273449 100%);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.85rem;
+    border: 1px solid #334155;
+    text-align: center;
+    min-width: 110px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dino-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dino-stat-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.dino-stat-label i {
+    margin-right: 0.25rem;
+    font-size: 0.65rem;
+}
+
+.dino-stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+#dino-score { color: #fbbf24; }
+#dino-highscore { color: #60a5fa; }
+#dino-level { color: #a78bfa; }
+#dino-time { color: #94a3b8; }
+
+.dino-btn {
+    padding: 0.75rem 2.5rem;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0c0f14;
+    border: none;
+    border-radius: 0.85rem;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dino-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
+}
+
+.dino-btn:active {
+    transform: translateY(0);
+}
+
+.dino-hint {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.night-indicator {
+    animation: pulse 2s ease-in-out infinite;
+}
